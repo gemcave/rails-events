@@ -7,7 +7,10 @@
 	<br>
 	<% @events.each do |event| %>
 		<article>
-			<header><h2><%= link_to(event.name, event) %></h2></header>
+			<header>
+			<%= image_for(event) %>
+			<h2><%= link_to(event.name, event) %></h2></header>
+			<h3><%= pluralize(event.capacity,"spot") %></h3>
 		</article>
 		<p><%= truncate(event.description,length: 35, separator: ' ')%></p>
 		<table>
