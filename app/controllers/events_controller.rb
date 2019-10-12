@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
 	def index
 		@time = Time.now
-
-		@events = Event.all
+		@events = Event.upcoming
 	end
 
 	def show
@@ -34,7 +33,7 @@ class EventsController < ApplicationController
 		@event.destroy
 		redirect_to events_url
 	end
-	
+
 	private
 	def event_params
 		event_params = params.require(:event).permit(:name,:description,:starts_at,:price,:location)
