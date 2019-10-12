@@ -4,7 +4,7 @@ Listing was generated at <%= @time %>
 
 	<% @events.each do |event| %>
 		<article>
-			<header><h2><%= event.name %></h2></header>
+			<header><h2><%= link_to(event.name, event) %></h2></header>
 		</article>
 		<p><%= truncate(event.description,length: 35, separator: ' ')%></p>
 		<table>
