@@ -1,0 +1,19 @@
+
+		<article>
+			<header><h2><%= @event.name %></h2></header>
+		</article>
+		<p><%= truncate(@event.description,length: 35, separator: ' ')%></p>
+		<table>
+			<tr>
+				<th>When:</th>
+				<td><%= @event.starts_at.to_s(:default) %></td>
+			</tr>
+			<tr>
+				<th>Where:</th>
+				<td><%= @event.location %></td>
+			</tr>
+			<tr>
+				<th>Price:</th>
+					<td><%= format_price(@event) %></td>
+			</tr>
+		</table>
