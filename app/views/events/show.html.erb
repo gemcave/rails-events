@@ -19,4 +19,5 @@
 		</table>
 
 		<%= link_to 'All Events', events_path %> |
-		<%= link_to 'Edit Event', edit_event_path(@event) %>
+		<%= link_to 'Edit Event', edit_event_path(@event) %> |
+		<%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: 'Are you sure?'} %>
