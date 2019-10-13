@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require layout
+ *= require elements
+ *= require events
+ *= require buttons
+ *= require forms
  */

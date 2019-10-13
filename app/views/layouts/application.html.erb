@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+		<%= render 'layouts/header' %>
+		  <div class="wrapper">
+				<div class="container">
+					<%= render 'layouts/sidebar' %>
+					<section class="content">
+						<%= yield %>
+					</section>
+					</div>
+			</div>
+		<%= render 'layouts/footer' %>
   </body>
 </html>
