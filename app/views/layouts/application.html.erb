@@ -16,6 +16,10 @@
 					<p class="flash notice">
 						<%= flash[:notice] %>
 					</p>
+				<% elsif flash[:alert] %>
+					<p class="flash alert">
+						<%= flash[:alert] %>
+					</p>
 				<% end %>
 				<div class="container">
 					<%= render 'layouts/sidebar' %>
