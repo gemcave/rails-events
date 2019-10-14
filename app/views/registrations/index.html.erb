@@ -4,7 +4,10 @@
 
 <ul class="registrations">
 	<% @registrations.each do |r| %>
-		<li><%= mail_to(r.email, r.name) %>
+		<li><%= link_to r.user.email, r.user %>
+		<span class="date">
+			<%= time_ago_in_words(r.created_at) %> ago
+		</span>
 		(<%= r.how_heard %>)</li>		
 	<% end %>
 </ul>
