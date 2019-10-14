@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+	before_action :require_signin, except: [:index, :show]
+	before_action :require_admin, except: [:index, :show]
+
 	def index
 		@events = Event.upcoming
 	end
@@ -40,6 +43,7 @@ class EventsController < ApplicationController
 	end
 
 	private
+
 	def event_params
 		event_params = params.require(:event).permit(:name,:description,:starts_at,:price,:location,:capacity,:image_file_name)
 	end
