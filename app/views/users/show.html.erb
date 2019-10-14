@@ -5,11 +5,14 @@
 	</header>
 	<footer>
 		<nav>
+			<% if current_user?(@user) %>
+				
 			<%= link_to 'Edit Account', edit_user_path(@user), class: "button" %>
 			<%= link_to 'Delete Account', @user, 
 												method: :delete, 
 												data: { confirm: "Are you sure?" }, 
 												class: "button" %>
+			<% end %>
 		</nav>
 	</footer>
 </article>
