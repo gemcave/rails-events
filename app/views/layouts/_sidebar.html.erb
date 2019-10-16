@@ -1,8 +1,17 @@
 <aside  class="sidebar">
 			<nav>
 				<ul>
-					 <li class="upcoming-events">
-						<%= link_to 'All Events', events_path, class: 'button' %>
+					 <li class="events">
+						<%= link_to 'Upcoming', events_path, class: 'button' %>
+					</li>
+					 <li class="events">
+						<%= link_to 'Past', filtered_events_path(:past), class: 'button' %>
+					</li>
+					 <li class="events">
+						<%= link_to 'Free', filtered_events_path(:free), class: 'button' %>
+					</li>
+					 <li class="events">
+						<%= link_to 'Recent', filtered_events_path(:recent), class: 'button' %>
 					</li>
 					<% if current_user_admin? %>	
 						<li class="create-event">
