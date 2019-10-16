@@ -29,6 +29,16 @@
 			<% end %>
 		</ul>
 	<% end %>
+
+	<h3>Categories</h3>
+		<ul>
+			<% @categories.each do |category| %>
+				<li>
+					<%= category.name %>
+				</li>
+			<% end %>
+		</ul>
+
   
   <h3>Price</h3>
   <p>
