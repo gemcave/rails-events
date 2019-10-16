@@ -18,9 +18,18 @@ class Event < ApplicationRecord
 		price.blank? || price.zero?
 	end
 
-	def self.upcoming
-		where("starts_at >= ?", Time.now).order("starts_at")
-	end
+	scope :past, -> {where("starts_at < ?", Time.now).order("starts_at")}
+	scope :upcoming, -> {where("starts_at >= ?", Time.now).order("starts_at")}
+	scope :free, -> {upcoming.where(price: 0).order(:name)}
+	scope :recent, -> (max=3) {past.limit(max)}
+
+	# def self.past
+	# 	where("starts_at < ?", Time.now).order("starts_at")
+	# end
+
+	# def self.upcoming
+	# 	where("starts_at >= ?", Time.now).order("starts_at")
+	# end
 
 	def spots_left
 		capacity - registrations.size
