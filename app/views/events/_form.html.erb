@@ -27,7 +27,7 @@
         <%= f.number_field :capacity, size: 6 %>
       </li>
       <li class="required">
-        <%= f.label :image_file_name, 'Image Filename' %>
+        <%= f.label :image_file_name %>
         <%= f.text_field :image_file_name, size: 30, 
                          placeholder: "GIF, JPG, or PNG file name" %>
       </li>
@@ -37,7 +37,7 @@
     </ol>
     <p>
       <%= f.submit %>
-      <%= link_to "Cancel", events_path, class: 'button' %>
+      <%= link_to t("common.cancel"), events_path, class: 'button' %>
     </p>
   </fieldset>
 <% end %>

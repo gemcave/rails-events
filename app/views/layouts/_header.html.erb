@@ -1,14 +1,18 @@
 <header class="page-header">
   <div class="masthead">
-			<h1><%= link_to 'Eventz', root_path %></h1>
+			<%= link_to image_tag('logo.png'), root_path %>
 			<nav>
 				<p>
 					<% if current_user %>
 						<%= link_to current_user.name, current_user %>
-						<%= link_to 'Sign Out', session_path, method: :delete, class: "button" %>
+						<%= link_to t('.sign_out'), session_path, method: :delete, class: "button" %>
+						<%= link_to "Рус", {locale: :ru}, class: "locale #{ 'active' if I18n.locale == :ru }"  %>
+						<%= link_to "Eng", {locale: :en}, class: "locale #{ 'active' if I18n.locale == :en }" %>
 					<% else %>
-						<%= link_to 'Sign Up', signup_path, class: "button" %>
-						<%= link_to 'Sign In', new_session_path, class: "button" %>
+						<%= link_to "Рус", {locale: :ru}, class: "locale #{ 'active' if I18n.locale == :ru }"  %>
+						<%= link_to "Eng", {locale: :en}, class: "locale #{ 'active' if I18n.locale == :en }" %>
+						<%= link_to t('.sign_up'), signup_path, class: "button" %>
+						<%= link_to t('.sign_in'), new_session_path, class: "button" %>
 					<% end %>
 				</p>
 			</nav>

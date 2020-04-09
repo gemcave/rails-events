@@ -15,17 +15,17 @@
         <%= f.password_field :password, size: 40 %>
       </li>
       <li class="required">
-        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.label :password_confirmation, t('common.confirm_password') %>
         <%= f.password_field :password_confirmation, size: 40 %>
       </li>
     </ol>
     <p>
 			<% if @user.new_record? %>
-      		<%= f.submit "Create Account" %>
+      		<%= f.submit t('common.create_acc') %>
 			<% else %>
-					<%= f.submit "Update Account" %>
+					<%= f.submit t('common.update_acc') %>
 			<% end %>
-      <%= link_to "Cancel", users_path, class: 'button' %>
+      <%= link_to t('common.cancel'), users_path, class: 'button' %>
     </p>
   </fieldset>
 <% end %>

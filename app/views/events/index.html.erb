@@ -5,22 +5,22 @@
         <header>
           <%= image_for(event) %>
           <h2><%= link_to(event.name, event) %></h2>
-          <h3><%= pluralize(event.spots_left, 'spot') %> available</h3>
+          <h3><%= t('.spots_left', count: event.spots_left) %></h3>
         </header>
         <p>
           <%= truncate(event.description, length: 150, separator: ' ') %>
         </p>
         <table>
           <tr>
-            <th>When</th>
-            <td><%= event.starts_at %></td>
+            <th><%= t('.when') %></th>
+            <td><%= I18n.l(event.starts_at, format: :default)%></td>
           </tr>
           <tr>
-            <th>Where</th>
+            <th><%= t('.where') %></th>
             <td><%= event.location %></td>
           </tr>
           <tr>
-            <th>Price</th>
+            <th><%= t('.price') %></th>
             <td><%= format_price(event) %></td>
           </tr>
         </table>

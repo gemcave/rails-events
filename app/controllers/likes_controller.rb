@@ -4,13 +4,13 @@ class LikesController < ApplicationController
 	def create
 		
 		@event.likes.create!(user: current_user)
-		redirect_to @event, notice: "Glad you liked it!"
+		redirect_to @event, notice: t('action.glad_you')
 	end
 
 	def destroy
 		like = current_user.likes.find(params[:id])
 		like.destroy
-		redirect_to @event, notice: "Sorry!"
+		redirect_to @event, notice: t('action.no_glad')
 	end
 
 	private

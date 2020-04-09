@@ -1,0 +1,97 @@
+ru:
+  shared:
+    errors:
+      title: 'Упс! Ошибка при заполнении формы.'
+      title_about: 'Пожалуйста исправьте следующее'
+      error:
+        zero: 'Нету ошибок'
+        one: ' ошибка'
+        few: ' 2 ошибки'
+        other: ' %{count} ошибки'
+  action:
+    welcome_back: 'С возвращением, %{name}!'
+    invalid_sign_in: 'Неправильный адрес электронной почты или пароль!'
+    sign_out: 'Вы вышли из аккаунта!'
+    event_created: 'Вы создали мероприятие!'
+    glad_you: "Рад что вам понравилось!"
+    no_glad: "Сожалею что вам не понравилось"
+  common:
+    free: 'Бесплатно'
+    create_acc: 'Создать аккаунт'
+    update_acc: 'Редактировать аккаунт'
+    sign_in_acc: 'Войти аккаунт'
+    email: 'Электронная почта'
+    password: 'Пароль' 
+    cancel: 'Отмена'
+    like: "Нравиться"
+    unlike: "Не нравится"
+    confirm: 'Вы уверены?'
+    delete: 'Удалить'
+    account: 'Аккаунт'
+    common: 'Все места проданы!'
+    register: 'Зарегистрироваться'
+    edit: 'Редактировать'
+    no_access: 'НЕСАНКЦИОНИРОВАННЫЙ ДОСТУП!'
+    user:
+      create: 'Спасибо за регистрацию!'
+      update: 'Аккаунт успешно обновлен!' 
+      delete: 'Аккаунт успешно удален!'
+    confirm_password: 'Подтвердите пароль'
+    user_count: 
+        zero: 'Нету пользователей'
+        one: '1 пользователь'
+        few: '2 пользователя'
+        other: '%{count} пользователя'
+  users:
+    show:
+      registered_for: 'Зарегистрирован в'
+      liked_events: 'Понравившиеся события'
+  layouts:
+    sidebar:
+      upcoming: 'Скоро'
+      past: 'Прошлые'
+      free: 'Бесплатные'
+      recent: 'Недавние'
+      add_new_event: 'Новое событие'
+    header:
+      sign_up: 'Регистрация'
+      sign_in: 'Вход'
+      sign_out: 'Выход'
+  events:
+    index: 
+      where: 'Где'
+      when: 'Когда'
+      price: 'Цена'
+      spots_left: 
+        zero: 'Нету свободных мест'
+        one: 'Осталось 1 место'
+        few: 'Осталось 2 места'
+        many: 'Осталось %{count} мест'
+        other: 'Осталось %{count} мест'
+    new:
+      new_event: 'Создание нового события'
+    edit:
+      edit: 'Редактирование'
+    show:
+      name: 'Название'
+      description: 'Описание'
+      location: 'Место проведения'
+      price: 'Цена'
+      capacity: 'Количество участников'
+      starts_at: 'Дата проведения'
+      image_file_name: 'Название изображения'
+      cats: 'Категории'
+      likers: 'Кому понравилось'
+      spots: 
+        zero: 'Нету мест'
+        one: '1 место'
+        few: '2 места'
+        other: '%{count} мест'
+        many: '%{count} мест'
+      registered: 'Кто зарегистрировался?'    
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+    month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]

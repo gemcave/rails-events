@@ -2,20 +2,20 @@
 			<nav>
 				<ul>
 					 <li class="events">
-						<%= link_to 'Upcoming', events_path, class: 'button' %>
+						<%= link_to  t('.upcoming'), events_path, class: 'button' %>
 					</li>
 					 <li class="events">
-						<%= link_to 'Past', filtered_events_path(:past), class: 'button' %>
+						<%= link_to t('.past'), filtered_events_path(:past), class: 'button' %>
 					</li>
 					 <li class="events">
-						<%= link_to 'Free', filtered_events_path(:free), class: 'button' %>
+						<%= link_to t('.free'), filtered_events_path(:free), class: 'button' %>
 					</li>
 					 <li class="events">
-						<%= link_to 'Recent', filtered_events_path(:recent), class: 'button' %>
+						<%= link_to t('.recent'), filtered_events_path(:recent), class: 'button' %>
 					</li>
-					<% if current_user_admin? %>	
+					<% if current_user_admin?%>	
 						<li class="create-event">
-							<%= link_to 'Add New Event', new_event_path, class: 'button' %>
+							<%= link_to t('.add_new_event'), new_event_path, class: 'button' %>
 						</li>
 					<% end %>
 			</ul>

@@ -30,4 +30,51 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  shared:
+    errors:
+      title: 'Oops! Your form could not be saved.'
+      title_about: 'Please correct the following'
+  action:
+    welcome_back: 'Welcome back, %{name}!'
+    invalid_sign_in: 'Invalid email/password combination!'
+    sign_out: "Now you're signed out!"
+    event_created: 'Event succesfully created!'
+    glad_you: "Glad you liked it!"
+  common:
+    free: 'Free'
+    like: "Like"
+    unlike: "Unlike"
+    confirm: 'Are you sure?'
+    account: 'Account'
+    sold_out: 'Sold Out!'
+    register: 'Register!'
+    delete: 'Delete'
+    edit: 'Edit'
+    no_access: 'Unauthorized access!'
+    user:
+      create: 'Thanks for signing up'
+      update: 'Account successfully updated!'
+      delete: 'Account successfully deleted!'
+    user_count: 
+        zero: 'No users in database'
+        one: '1 user'
+        few: '2 users'
+        other: '%{count} users'
+  users:
+    show:
+      registered_for: 'Registered For'
+      liked_events: 'Liked events'
+  events:
+    index:
+      spots_left: 
+        zero: 'No spots left'
+        one: '1 spot left'
+        few: '2 spots left'
+        other: '%{count} spots left'
+    show:
+        registered: "Who's registered?"
+        likers: 'Likers'
+    new:
+      new_event: 'Create a New Event'
+    edit:
+      edit: 'Editing'

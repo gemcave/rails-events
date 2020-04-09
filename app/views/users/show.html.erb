@@ -7,7 +7,7 @@
 
 	<%= content_for :side do %>
 		<% if @liked_events.any? %>
-			<h3>Liked events</h3>
+			<h3><%= t('.liked_events') %></h3>
 			<ul>
 				<% @liked_events.each do |event| %>
 					<li>
@@ -19,7 +19,7 @@
 	<% end %>
 
 	<% if @registrations.any? %>
-		<h3>Registered For</h3>
+		<h3><%= t('.registered_for') %></h3>
 		<ul>
 			<% @registrations.each do |registration| %>
 					<li>
@@ -33,10 +33,10 @@
 		<nav>
 			<% if current_user?(@user) %>
 				
-			<%= link_to 'Edit Account', edit_user_path(@user), class: "button" %>
-			<%= link_to 'Delete Account', @user, 
+			<%= link_to "#{t('common.edit')} #{t('common.account')}", edit_user_path(@user), class: "button" %>
+			<%= link_to "#{t('common.delete')} #{t('common.account')}", @user, 
 												method: :delete, 
-												data: { confirm: "Are you sure?" }, 
+												data: { confirm: t('common.confirm') },
 												class: "button" %>
 			<% end %>
 		</nav>

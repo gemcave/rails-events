@@ -1,5 +1,5 @@
 <header class="content-header">
-	<h1><%= pluralize(@users.size, "User") %></h1>
+	<h1><%= t('common.user_count',count: @users.size) %></h1>
 </header>
 
 <ul class="users">

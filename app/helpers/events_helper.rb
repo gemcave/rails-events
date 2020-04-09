@@ -1,9 +1,12 @@
 module EventsHelper
 	def format_price(event)
 		if event.free?
-			content_tag(:strong, "Free!")
-		else
+			content_tag(:strong, t('common.free'))
+		elsif I18n.locale == :en
 			number_to_currency(event.price)
+		elsif I18n.locale == :ru
+			"#{event.price} тг."
+			# number_to_currency(event.price, locale: :kzt)
 		end
 	end
 

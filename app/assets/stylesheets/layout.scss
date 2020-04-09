@@ -8,7 +8,7 @@ body {
 
 header.page-header {
   background-color: $secondary-background-color;
-  padding: 0px 25px;
+  padding: 10px 25px;
 
   h1 a {
     height: 0px;
@@ -19,7 +19,8 @@ header.page-header {
     text-decoration: none;
     overflow: hidden;
     background: image_url("logo.png") no-repeat 0 0;
-  }
+	}
+	
 
   a.button {
     margin-left: 10px;
@@ -84,13 +85,12 @@ footer.page-footer {
 
 div.wrapper {
   background: #fff;
-  padding: 10px;
   min-height: 400px;
   overflow: hidden;
   div.container {
     width: 960px;
 	  margin: 0 auto;
-    padding: 10px 0;
+    padding: 50px 0;
     section.content {
       width: 620px;
       h1 {

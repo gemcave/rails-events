@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      event: 'Событие'
+      user: 'Пользователь'
+    attributes:
+      event:
+        name: 'Название'
+        description: 'Описание'
+        location: 'Место проведения'
+        price: 'Цена'
+        capacity: 'Количество участников'
+        starts_at: 'Дата проведения'
+        image_file_name: 'Название изображения'        
+      user:
+        email: 'Электронная почта'
+        name: 'Имя пользователя'
