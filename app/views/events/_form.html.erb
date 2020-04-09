@@ -35,6 +35,7 @@
 				<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
 			</li>
     </ol>
+		<input type="text" class="selectize">
     <p>
       <%= f.submit %>
       <%= link_to t("common.cancel"), events_path, class: 'button' %>
