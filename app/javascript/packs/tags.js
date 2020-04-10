@@ -6,15 +6,17 @@ $(document).on("turbolinks:load", function() {
 		delimiter: ',',
 		persist: false,
 		placeholder: '-',
+		render: {
+			option_create: function(data, escape) {
+				return `<div class="create">Добавить <strong>${escape(data.input)}</strong></div>`;
+			}
+		},
 		create: function (input, callback){
 			var self = this;
 			var fd = new FormData();
 			fd.append("name", input)			
-			console.log(input)
-			console.log(self.options)
 			for (let [key, value] of Object.entries(self.options)) {
 				if (value.text == input) {
-					self.placeholder = "-"
 					return callback();
 				}
 			}
