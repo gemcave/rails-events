@@ -18,5 +18,5 @@
  *= require buttons
  *= require forms
  */
-@import "./selectize/selectize";
-@import "./selectize/selectize.default";
+@import "selectize/dist/css/selectize";
+@import "selectize/dist/css/selectize.default";
