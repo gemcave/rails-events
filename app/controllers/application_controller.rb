@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
 	before_action :set_locale 
+
+	helper_method :logout
+	def logout
+    reset_session
+    redirect_to :root
+	end
+	
 	private
 	def require_signin
 		unless current_user
@@ -25,6 +32,7 @@ class ApplicationController < ActionController::Base
 	def current_user?(user)
 		current_user == user
 	end
+	
 
 	helper_method :current_user?
 
@@ -36,7 +44,7 @@ class ApplicationController < ActionController::Base
 
 
 	def current_user_admin?
-		current_user || current_user.admin? 
+		current_user || current_user.try(:admin?)
 	end
 
 	helper_method :current_user_admin?

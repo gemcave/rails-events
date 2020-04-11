@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
 	scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 		resources :categories
 		resource :session
@@ -18,6 +19,9 @@ Rails.application.routes.draw do
 		# get "events/:scope" => "events#index", constraints: {scope: /past|free/}
 
 		get "events/filter/:scope" => "events#index", as: :filtered_events
+
+		get :logout, controller: :application, as: :destroy_admin_user_session
+
 
 		resources :events do
 			resources :registrations 

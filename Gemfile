@@ -13,7 +13,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
-
+gem 'activeadmin'
+# gem 'devise'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
