@@ -10,6 +10,7 @@ end
 group :production do
 	gem 'pg'
 end
+
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
