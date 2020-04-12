@@ -34,6 +34,10 @@ en:
     show:
       registered_for: 'Registered For'
       liked_events: 'Liked events'
+  registrations:
+    new:
+      how_heard: 'How heard'
+      pick: 'Pick one'
   events:
     index:
       spots_left: 

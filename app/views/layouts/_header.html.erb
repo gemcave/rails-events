@@ -3,16 +3,16 @@
 	<%= link_to image_tag('logo.png'), root_path %>
 	<ul class="left">
       <li>
-        <%= link_to "Upcoming", events_path %>
+        <%= link_to  t('.upcoming'), events_path %>
       </li>
       <li>
-        <%= link_to "Past", filtered_events_path(:past) %>
+        <%= link_to t('.past'), filtered_events_path(:past)%>
       </li>
       <li>
-        <%= link_to "Free", filtered_events_path(:free) %>
+        <%= link_to t('.free'), filtered_events_path(:free)%>
       </li>
       <li>
-        <%= link_to "Recent", filtered_events_path(:recent) %>
+        <%= link_to t('.recent'), filtered_events_path(:recent)%>
       </li>
 	</ul>
   <ul class="right">

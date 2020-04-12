@@ -16,6 +16,8 @@ ru:
     glad_you: "Рад что вам понравилось!"
     no_glad: "Сожалею что вам не понравилось"
   common:
+    ago: 'назад'
+    add_new_event: 'Новое событие'
     free: 'Бесплатно'
     image_label: 'Изображение'
     create_acc: 'Создать аккаунт'
@@ -45,19 +47,27 @@ ru:
         other: '%{count} пользователя'
   users:
     show:
-      registered_for: 'Зарегистрирован в'
+      registered: 'Регистрации'
       liked_events: 'Понравившиеся события'
+    index:
+      created: 'создан'
+  registrations:
+    index:
+      registrations: "Регистрация на"
+    new:
+      register_for: 'Registration for'
+      how_heard: 'Как узнали'
+      pick: 'Выберите источник'
+      new: 'Зарегистрироваться'
   layouts:
-    sidebar:
-      upcoming: 'Скоро'
-      past: 'Прошлые'
-      free: 'Бесплатные'
-      recent: 'Недавние'
-      add_new_event: 'Новое событие'
     header:
       sign_up: 'Регистрация'
       sign_in: 'Вход'
       sign_out: 'Выход'
+      upcoming: 'Скоро'
+      past: 'Прошлые'
+      free: 'Бесплатные'
+      recent: 'Недавние'
   events:
     index: 
       v: 'в'

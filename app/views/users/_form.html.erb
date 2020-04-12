@@ -1,31 +1,21 @@
-<%= form_for(@user) do |f| %>
-<%= render 'shared/errors', object: @user %>
-	<fieldset>
-    <ol>
-      <li class="required">
-        <%= f.label :name %>
-        <%= f.text_field :name, size: 40, autofocus: true %>
-      </li>
-      <li class="required">
-        <%= f.label :email %>
-        <%= f.text_field :email, size: 40 %>
-      </li>
-      <li class="required">
-        <%= f.label :password %>
-        <%= f.password_field :password, size: 40 %>
-      </li>
-      <li class="required">
-        <%= f.label :password_confirmation, t('common.confirm_password') %>
-        <%= f.password_field :password_confirmation, size: 40 %>
-      </li>
-    </ol>
-    <p>
-			<% if @user.new_record? %>
-      		<%= f.submit t('common.create_acc') %>
-			<% else %>
-					<%= f.submit t('common.update_acc') %>
-			<% end %>
-      <%= link_to t('common.cancel'), users_path, class: 'button' %>
-    </p>
-  </fieldset>
+<%= form_with(model: user, local: true) do |f| %>
+<%= render 'shared/errors', object: user %>
+	<%= f.label :name %>
+	<%= f.text_field :name, size: 40, autofocus: true %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email, size: 40 %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password, size: 40 %>
+
+	<%= f.label :password_confirmation, t('common.confirm_password') %>
+	<%= f.password_field :password_confirmation, size: 40 %>
+   
+	<% if @user.new_record? %>
+			<%= f.submit t('common.create_acc') %>
+	<% else %>
+			<%= f.submit t('common.update_acc') %>
+	<% end %>
+	<%= link_to t('common.cancel'), users_path, class: 'button' %>
 <% end %>
