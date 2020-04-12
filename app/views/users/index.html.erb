@@ -1,11 +1,11 @@
-<header class="content-header">
-	<h1><%= t('common.user_count',count: @users.size) %></h1>
-</header>
+<h1><%= t('common.user_count',count: @users.size) %></h1>
 
 <ul class="users">
 	<% @users.each do |user| %>
 		<li>
 			<%= link_to user.name, user %>
+			<%= t('.created')%>
+			<%= time_ago_in_words(user.created_at) %> <%= t('common.ago') %>
 		</li>		
 	<% end %>
 </ul>

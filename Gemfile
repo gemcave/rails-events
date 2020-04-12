@@ -10,6 +10,7 @@ end
 group :production do
 	gem 'pg'
 end
+
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
@@ -20,8 +21,10 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
 gem 'devise'
 gem 'activeadmin'
-
+gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

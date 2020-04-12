@@ -1,6 +1,3 @@
-<header class="content-header">
-	<h1><%= t('common.edit_account')%></h1>
-</header>
+<h1><%= t('common.edit_account')%></h1>
 
-
-<%= render 'form' %>
+<%= render "form", user: @user %>

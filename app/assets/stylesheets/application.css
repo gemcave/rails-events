@@ -12,11 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require layout
- *= require elements
- *= require events
- *= require buttons
- *= require forms
  */
-@import "selectize/dist/css/selectize";
-@import "selectize/dist/css/selectize.default";
+@import "node_modules/selectize/dist/css/selectize";
+@import "node_modules/selectize/dist/css/selectize.default";

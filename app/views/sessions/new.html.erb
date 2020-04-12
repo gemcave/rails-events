@@ -1,19 +1,12 @@
-<header class="content-header">
-	<h1><%= t('layouts.header.sign_in')%></h1>
-</header>
+<h1><%= t('layouts.header.sign_in')%></h1>
 
-<%= form_tag(session_path) do %>
-	<fieldset>
-		<p>
+<%= form_with(url: session_path, local: true) do |f| %>	
+
 			<%= label_tag t('common.email') %>
 			<%= email_field_tag :email, nil, autofocus: true %>
-		</p>
-		<p>
+
 			<%= label_tag t('common.password') %>
 			<%= password_field_tag :password, nil %>
-		</p>
-		<p>
+
 			<%= submit_tag t('common.sign_in_acc') %>
-		</p>
-	</fieldset>
 <% end %>
