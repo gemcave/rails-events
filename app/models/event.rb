@@ -5,24 +5,25 @@ class Event < ApplicationRecord
 	validates :description, length: {minimum: 25}
 	validates :price, numericality: {greater_than_or_equal_to: 0}
 	validates :capacity, numericality: {only_integer: true, greater_than: 0}
-	validates :acceptable_image
-
+	
 	has_one_attached :main_image
 	
 	# has_one :main_image_attachment, dependent: :destroy
 	# has_one :main_image_blob, through: :main_image_attachment
 	
 	before_validation :generate_slug
-
+	
 	has_many :registrations, dependent: :destroy
 	has_many :likes, dependent: :destroy
 	has_many :likers, through: :likes, source: :user
 	has_many :categorizations, dependent: :destroy
 	has_many :categories, through: :categorizations
-
+	
 	def free?
 		price.blank? || price.zero?
 	end
+	
+	validate :acceptable_image 
 
 	scope :past, -> {where("starts_at < ?", Time.now).order("starts_at")}
 	scope :upcoming, -> {where("starts_at >= ?", Time.now).order("starts_at")}
@@ -52,7 +53,6 @@ class Event < ApplicationRecord
 	def generate_slug
 		self.slug ||= name.parameterize if name
 	end
-
 	private
 	def acceptable_image
 		return unless main_image.attached?
