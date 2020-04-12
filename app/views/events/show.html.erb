@@ -1,59 +1,42 @@
 <% content_for(:title, @event.name) %>
-<article id="event" class="event">
-  <header>
+<section class="event-details">
+  <div class="image">
     <%= main_image(@event) %>
+		<% if current_user %>
+      <div class="likes">
+        <% if @current_like %>
+						<%= button_to t('common.unlike'), event_like_path(@event, @current_like), method: :delete %>
+				<% else %>
+						<%= button_to t('common.like'), event_likes_path(@event) %>
+				<% end %>
+        <div class="count">
+          <%= @likers.size %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+	<div class="details">
     <h1><%= @event.name %></h1>
-    <h2><%= I18n.l(@event.starts_at, format: :default)%></h2>
-  </header>
-  
-  <p>
-    <%= @event.description %>
-  </p>
+		<h2>
+			<%= t('.spots', count: @event.capacity) %> &bull; <%= format_price(@event) %>
+    </h2>
+    
+		<h3>
+				<%= I18n.l(@event.starts_at, format: :default) %> <%= t('events.index.v')%> <%= @event.location %>
+		</h3>
 
-	<p>
-		<%= pluralize(@likers.size,"like") %>
-	</p>
-	<% if current_user %>
-		<% if @current_like %>
-				<%= button_to t('common.unlike'), event_like_path(@event, @current_like), method: :delete %>
-		<% else %>
-				<%= button_to t('common.like'), event_likes_path(@event) %>
-		<% end %>
-	<% end %>
-  
-  <h3><%= t('.price') %></h3>
-  <p>
-    <%= format_price(@event) %>
-  </p>
-  
-  <h3><%= t('.location') %></h3>
-  <p>
-    <%= @event.location %>
-  </p>
-  
-  <h3><%= t('.capacity') %></h3>
-  <p>
-    <%= t('.spots', count: @event.capacity) %>
-  </p>
-  <%= link_to t('.registered'), event_registrations_path(@event) %>
-  <footer>
-		<%= register_link(@event) %>
 		<p>
-			(<%= t('events.index.spots_left',count: @event.spots_left) %>)
+			<%= @event.description %>
 		</p>
-    <nav>
-			<% if current_user_admin? %>
-				<%= link_to t('common.edit'), edit_event_path(@event), class: 'button' %>
-				<%= link_to t('common.delete'), @event, 
-										class: 'button',
-										method: :delete, data: { confirm: t('common.confirm') } %>
-			<% end %>
-    </nav>
-  </footer>
-</article>
 
-
-<% content_for(:side) do %>
+		<div class="register">
+			<%= register_link(@event) %>
+      <p>
+        <%= link_to t('.registered'), event_registrations_path(@event) %>
+      </p>
+    </div>
+	</div>
+	<aside>
 		<% if @likers.any? %>
 			<h3><%= t('.likers') %></h3>
 			<ul>
@@ -74,4 +57,14 @@
 			<% end %>
 		</ul>	
 	<% end %>
+	</aside>
+</section>
+
+<% if current_user_admin? %>
+	<section class="admin">
+					<%= link_to t('common.edit'), edit_event_path(@event), class: 'button' %>
+					<%= link_to t('common.delete'), @event, 
+											class: 'button',
+											method: :delete, data: { confirm: t('common.confirm') } %>
+	</section>
 <% end %>

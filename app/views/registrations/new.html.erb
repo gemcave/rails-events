@@ -1,19 +1,13 @@
-<header class="content-header">
-	<h1>Registration for <%= link_to @event.name, @event %></h1>
-</header>
+<h1><%= t('registrations.index.registrations') %> <%= link_to @event.name, @event %></h1>
 
-<%= form_for([@event, @registration]) do |f| %>
+
+<%= form_with(model: [@event, @registration], local: true) do |f| %>
 <%= render 'shared/errors', object: @registration %>
-	<fieldset>
-    <ol>
-      <li class="required">
-        <%= f.label :how_heard %>
-        <%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt: "Pick One" %>
-      </li>
-    </ol>
-    <p>
-      <%= f.submit %>
-      <%= link_to "Cancel", events_path, class: 'button' %>
-    </p>
-  </fieldset>
+
+	<%= f.label t('.how_heard') %>
+	<%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt:  t('.pick') %>
+
+	<%= f.submit t('.new') %>
+	<%= link_to t('common.cancel'), events_path, class: 'button' %>
+
 <% end %>

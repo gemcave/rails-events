@@ -1,5 +1,3 @@
-<header class="content-header">
-  <h1><%= t('.new_event')%></h1>
-</header>
+<h1><%= t('.new_event')%></h1>
 
-<%= render "form" %>
+<%= render "form", event: @event %>

@@ -1,13 +1,9 @@
-<header class="content-header">
-	<h1>Registrations for <%= link_to(@event.name, @vent) %></h1>
-</header>
+<h1><%= t('.registrations')%> <%= link_to(@event.name, @event) %></h1>
 
 <ul class="registrations">
 	<% @registrations.each do |r| %>
-		<li><%= link_to r.user.email, r.user %>
-		<span class="date">
-			<%= time_ago_in_words(r.created_at) %> ago
-		</span>
-		(<%= r.how_heard %>)</li>		
+		<li>
+			<%= link_to r.user.email, r.user %> &bull; <%= r.how_heard %> &bull; <%= time_ago_in_words(r.created_at) %> <%= t('common.ago') %>
+		</li>		
 	<% end %>
 </ul>
