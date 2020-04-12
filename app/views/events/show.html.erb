@@ -1,7 +1,7 @@
 <% content_for(:title, @event.name) %>
 <article id="event" class="event">
   <header>
-    <%= image_for(@event) %>
+    <%= main_image(@event) %>
     <h1><%= @event.name %></h1>
     <h2><%= I18n.l(@event.starts_at, format: :default)%></h2>
   </header>

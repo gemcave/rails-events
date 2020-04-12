@@ -10,11 +10,11 @@ module EventsHelper
 		end
 	end
 
-	def image_for(event)
-		if event.image_file_name.blank?
-			image_tag 'placeholder.png'
+	def main_image(event)
+		if event.main_image.attached?
+			image_tag event.main_image.variant(resize_to_limit: [75, 75])
 		else
-			image_tag event.image_file_name
+			image_tag 'placeholder.png'
 		end
 	end
 end

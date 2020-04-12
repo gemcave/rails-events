@@ -20,7 +20,8 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
 gem 'devise'
 gem 'activeadmin'
-
+gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
