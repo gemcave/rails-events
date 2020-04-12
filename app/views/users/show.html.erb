@@ -1,44 +1,38 @@
-<% content_for(:title, @user.name) %>
-<article class="user">
-	<header>
-		<h1><%= @user.name %></h1>
-		<h2><%= @user.email %></h2>
-	</header>
-
-	<%= content_for :side do %>
-		<% if @liked_events.any? %>
-			<h3><%= t('.liked_events') %></h3>
-			<ul>
-				<% @liked_events.each do |event| %>
-					<li>
-						<%= link_to event.name, event %>
-					</li>
-				<% end %>
-			</ul>
-		<% end %>
-	<% end %>
-
-	<% if @registrations.any? %>
-		<h3><%= t('.registered_for') %></h3>
-		<ul>
-			<% @registrations.each do |registration| %>
-					<li>
-						<%= link_to registration.event.name, registration.event %>
-						(<%= time_ago_in_words(registration.created_at) %> ago)
-					</li>
-			<% end %>
-		</ul>
-	<% end %>
-	<footer>
-		<nav>
-			<% if current_user?(@user) %>
-				
-			<%= link_to "#{t('common.edit')} #{t('common.account')}", edit_user_path(@user), class: "button" %>
+<section class="user">
+	<h1><%= @user.name %></h1>
+	<h2><%= @user.email %></h2>
+	<% if current_user?(@user) %>
+		<div class="actions">
+			<%= link_to "#{t('common.edit')} #{t('common.account')}", edit_user_path(@user), class: "button edit" %>
 			<%= link_to "#{t('common.delete')} #{t('common.account')}", @user, 
 												method: :delete, 
 												data: { confirm: t('common.confirm') },
-												class: "button" %>
+												class: "button delete" %>
+			</div>
+		<% end %>
+	<% if @registrations.any? %>
+		<h3><%= t('.registered') %></h3>
+			<% @registrations.each do |r| %>
+				<div class="registration">
+					<div class="image">
+						<%= link_to main_image(r.event), r.event %>
+					</div>
+					<div class="name">
+						<%= link_to r.event.name, r.event %>
+					</div>
+					<div class="date">
+						<%= time_ago_in_words(r.created_at) %> <%= t('common.ago') %>
+					</div>
+				</div>
 			<% end %>
-		</nav>
-	</footer>
-</article>
+	<% end %>
+	
+	<% if @liked_events.any? %>
+		<h3><%= t('.liked_events') %></h3>
+		<div class='liked-events'>
+			<% @liked_events.each do |event| %>
+					<%= link_to main_image(event), event %>
+			<% end %>
+		</div>
+	<% end %>
+</section>

@@ -11,23 +11,12 @@
 
   <body>
 		<%= render 'layouts/header' %>
-		  <div class="wrapper">
-				<% if flash[:notice] %>
-					<p class="flash notice">
-						<%= flash[:notice] %>
-					</p>
-				<% elsif flash[:alert] %>
-					<p class="flash alert">
-						<%= flash[:alert] %>
-					</p>
-				<% end %>
-				<div class="container">
-					<%= render 'layouts/sidebar' %>
-					<section class="content">
-						<%= yield %>
-					</section>
-					</div>
-			</div>
+
+		<div class="content">
+				<%= render "layouts/flash" %>
+				<%= yield %>
+		</div>
+		
 		<%= render 'layouts/footer' %>
   </body>
 </html>
