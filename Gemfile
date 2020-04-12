@@ -24,6 +24,7 @@ gem 'activeadmin'
 gem 'image_processing', '~> 1.2'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

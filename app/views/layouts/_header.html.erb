@@ -1,20 +1,32 @@
-<header class="page-header">
-  <div class="masthead">
-			<%= link_to image_tag('logo.png'), root_path %>
-			<nav>
-				<p>
+<header>
+	<nav>
+	<%= link_to image_tag('logo.png'), root_path %>
+	<ul class="left">
+      <li>
+        <%= link_to "Upcoming", events_path %>
+      </li>
+      <li>
+        <%= link_to "Past", filtered_events_path(:past) %>
+      </li>
+      <li>
+        <%= link_to "Free", filtered_events_path(:free) %>
+      </li>
+      <li>
+        <%= link_to "Recent", filtered_events_path(:recent) %>
+      </li>
+	</ul>
+  <ul class="right">
 					<% if current_user %>
-						<%= link_to current_user.name, current_user %>
-						<%= link_to t('.sign_out'), session_path, method: :delete, class: "button" %>
-						<%= link_to "Рус", {locale: :ru}, class: "locale #{ 'active' if I18n.locale == :ru }"  %>
-						<%= link_to "Eng", {locale: :en}, class: "locale #{ 'active' if I18n.locale == :en }" %>
+						<li><%= link_to "Рус", {locale: :ru}, class: "#{ 'active' if I18n.locale == :ru }"  %></li>
+						<li><%= link_to "Eng", {locale: :en}, class: "#{ 'active' if I18n.locale == :en }" %></li>
+						<li><%= link_to current_user.name, current_user %></li>
+						<li><%= link_to t('.sign_out'), session_path, method: :delete, class: "button" %></li>
 					<% else %>
-						<%= link_to "Рус", {locale: :ru}, class: "locale #{ 'active' if I18n.locale == :ru }"  %>
-						<%= link_to "Eng", {locale: :en}, class: "locale #{ 'active' if I18n.locale == :en }" %>
-						<%= link_to t('.sign_up'), signup_path, class: "button" %>
-						<%= link_to t('.sign_in'), new_session_path, class: "button" %>
+						<li><%= link_to "Рус", {locale: :ru}, class: "#{ 'active' if I18n.locale == :ru }"  %></li>
+						<li><%= link_to "Eng", {locale: :en}, class: "#{ 'active' if I18n.locale == :en }" %></li>
+						<li><%= link_to t('.sign_up'), signup_path, class: "button" %></li>
+						<li><%= link_to t('.sign_in'), new_session_path, class: "button" %></li>
 					<% end %>
-				</p>
-			</nav>
-	</div>
+		</ul>
+	</nav>
 </header>

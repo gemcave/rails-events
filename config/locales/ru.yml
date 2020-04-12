@@ -59,6 +59,7 @@ ru:
       sign_out: 'Выход'
   events:
     index: 
+      v: 'в'
       where: 'Где'
       when: 'Когда'
       price: 'Цена'
