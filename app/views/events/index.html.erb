@@ -3,7 +3,7 @@
     <li>
       <article class="event">
         <header>
-          <%= image_for(event) %>
+					<%= main_image(event) %>
           <h2><%= link_to(event.name, event) %></h2>
           <h3><%= t('.spots_left', count: event.spots_left) %></h3>
         </header>
