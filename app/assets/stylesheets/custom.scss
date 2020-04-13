@@ -43,6 +43,15 @@ $secondary: $dark-gray;
 
 // Header and Nav
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 76px;
+}
+
 header {
 	background-color: $primary;
 	padding: 0.5rem;
@@ -368,9 +377,18 @@ footer {
 	background: $black;
   color: $light-gray;
 	text-align: center;
-	margin-top: 3rem;
-  padding-top: 2rem;
-	padding-bottom: 2rem;
+  // padding-top: 1rem;
+	// padding-bottom: 1rem;
+	&.footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 76px;
+		line-height: 76px;
+	}
+	p {
+		margin-bottom: 0;
+	}
 }
 
 // Admin Section
@@ -390,6 +408,7 @@ section.admin {
 		@extend .btn, .btn-secondary;
 		letter-spacing: 1px;
 		text-transform: uppercase;
+		margin-bottom: 3rem;
 	}
 }
 
