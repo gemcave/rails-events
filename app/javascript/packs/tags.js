@@ -6,6 +6,8 @@ $(document).on("turbolinks:load", function() {
 		delimiter: ',',
 		persist: false,
 		placeholder: '-',
+		maxItems: 5,
+		preload: true,
 		render: {
 			option_create: function(data, escape) {
 				return `<div class="create">Добавить <strong>${escape(data.input)}</strong></div>`;

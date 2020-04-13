@@ -6,31 +6,24 @@
 
 		<%= f.label :description %>
 		<%= f.text_area :description, cols: 40, rows: 7 %>
-	
+
 		<%= f.label :location %>
 		<%= f.text_field :location, size: 30 %>
-	
+
 		<%= f.label :price %>
-		<%= f.number_field :price, size: 6 %>
-	
+		<%= f.number_field :price %>
+
 		<%= f.label :starts_at %>
-		<%= f.datetime_select :starts_at, {discard_type: true}, {class: "datetime"} %>
-	
+		<%= f.datetime_select :starts_at,{default: Time.now}, {class: "datetime"} %>
+
 		<%= f.label :capacity %>
-		<%= f.number_field :capacity, size: 6 %>
-	
+		<%= f.number_field :capacity %>
+
 		<%= f.label t('common.image_label') %>
 		<%= f.file_field :main_image %>
-	
-	<div class="checkboxes">
-		<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
-	</div>
-	
-	<select class="selectize" multiple>
-			<% Category.all.each do |category| %>
-				<option value=<%= "#{category.id}" %>%><%= category.name %></option>
-			<% end %>
-		</select>
+
+		<%= f.select :category_ids, Category.all.pluck(:name, :id), {}, { multiple: true, class: "selectize" } %>
+
 	
 	<%= f.submit %>
 	<%= link_to t("common.cancel"), events_path, class: 'button' %>
