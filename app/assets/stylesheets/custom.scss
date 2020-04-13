@@ -39,6 +39,7 @@ $secondary: $dark-gray;
 
 .content {
 	@extend .container;
+	padding-bottom: 3rem;
 }
 
 // Header and Nav
@@ -408,7 +409,6 @@ section.admin {
 		@extend .btn, .btn-secondary;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		margin-bottom: 3rem;
 	}
 }
 
