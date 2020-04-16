@@ -13,7 +13,7 @@ class RegistrationsController < ApplicationController
 		@registration = @event.registrations.new(registration_params)
 		@registration.user = current_user
 		if @registration.save
-			redirect_to event_registrations_path(@event), notice: "Thank, you're registered!"
+			redirect_to event_registrations_path(@event), notice: t('common.thank_signup')
 		else
 			render :new
 		end
