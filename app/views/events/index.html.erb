@@ -1,3 +1,8 @@
+	<% if @events.empty? %>
+			<p>
+			Nothing / Нету событий 🎉
+			</p>
+	<% end %>
 
   <% @events.each do |event| %>
     <section class="event">
@@ -6,7 +11,7 @@
 				</div>
         <div class="summary">
           <h2><%= link_to(event.name, event) %></h2>
-					<h3><%= I18n.l(event.starts_at, format: :default)%> <%= t('.v')%> <%= event.location %></h3>
+					<h3><%= I18n.l(event.starts_at, format: :long)%> <%= t('.v')%> <%= event.location %></h3>
           <%# <h3><%= t('.spots_left', count: event.spots_left) %></h3>
 					<span class="price">
 						<%= format_price(event) %>

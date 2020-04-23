@@ -10,6 +10,8 @@ en:
     event_created: 'Event succesfully created!'
     glad_you: "Glad you liked it!"
   common:
+    thank_signup: "Thank, you're registered!"
+    require_signin: "Please sign in first!"
     image_label: 'Image'
     free: 'Free'
     like: "Like"

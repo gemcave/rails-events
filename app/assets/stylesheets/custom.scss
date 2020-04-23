@@ -12,7 +12,22 @@ $yellow: #ffc107;
 $light-yellow: #FFC;
 $red: #dc3545;
 
-// Custom Variables
+// Another version
+
+$black: #393939;
+$off-white: #27241D;
+$dark-gray: #666;
+$medium-gray: #6c757d;
+$light-gray: #c2c2c2;
+$blue: #D3CEC4;
+$light-blue: lighten(#27241D, 30%);
+$orange: #B92B27;
+$yellow: #ffc107;
+$light-yellow: #FFC;
+$red: #dc3545;
+
+
+// Custom Variables -- Alternative
 
 $secondary-text-color: $medium-gray;
 $accent-color: $orange;
@@ -26,6 +41,12 @@ $sold-out-color: $yellow;
 
 $body-color: $black;
 $body-bg: $off-white;
+$primary: $blue;
+$secondary: $dark-gray;
+
+// Bootstrap Variable Overrides -- Alternative
+$body-color: $black;
+$body-bg: #E8E6E1;
 $primary: $blue;
 $secondary: $dark-gray;
 
@@ -51,6 +72,9 @@ html {
 
 body {
 	margin-bottom: 76px;
+}
+a {
+	color: #A39E93;
 }
 
 header {
@@ -166,7 +190,7 @@ section.event {
 	span.price {
 		background: $accent-color;
 		letter-spacing: 1px;
-		color: $off-white;
+		color: $body-bg;
 		padding: 5px;
 		font-size: 0.85rem;
 		font-weight: 300;
@@ -375,8 +399,8 @@ ul.registrations {
 // Footer
 
 footer {
-	background: $black;
-  color: $light-gray;
+	background: $accent-color;
+  color: $body-bg;
 	text-align: center;
   // padding-top: 1rem;
 	// padding-bottom: 1rem;
@@ -407,8 +431,15 @@ section.admin {
 
 	a.button {
 		@extend .btn, .btn-secondary;
+		background-color: transparent;
+		border-color: $accent-color;
+		color: $accent-color;
 		letter-spacing: 1px;
 		text-transform: uppercase;
+		&:hover {
+			background-color: $accent-color;
+			border-color: $accent-color;
+		}
 	}
 }
 
@@ -535,8 +566,22 @@ section.errors {
 }
 
 ul.right a.active:hover:not(.button) {
-	border-bottom: 1px solid #EDEDED;
+	border-bottom: 1px solid $off-white;
 }
 ul.right a:hover:not(.button) {
 	border: none;
+}
+
+section.event {
+	h2 a {
+			color: $secondary-link-color;
+			&:hover  {
+				color: $off-white;
+			}
+		}
+}
+
+h2:hover ~ span.price {
+	background-color: $yellow;
+	color: $off-white;
 }

@@ -33,3 +33,13 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+app/assets/images/logo.svg
+
+app/assets/images/logo2.svg
+
+app/assets/images/logo3.svg
+
+app/assets/images/logo4.svg
+
+public/raw_favicon.png
