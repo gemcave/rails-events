@@ -1,4 +1,5 @@
 Rails.application.configure do
+	config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,6 +28,16 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+	ActionMailer::Base.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+  :address              => "#{ENV["PROVIDER_ADDRESS"]}", # eg:"smtp.gmail.com"
+  :port                 => "465",
+  :user_name            => "#{ENV["MAIL_USERNAME"]}",
+  :password             => "#{ENV["MAIL_PASSWORD"]}",
+  :authentication       => "plain",
+  }
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local

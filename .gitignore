@@ -43,3 +43,5 @@ app/assets/images/logo3.svg
 app/assets/images/logo4.svg
 
 public/raw_favicon.png
+
+app/views/password_resets/old.md

@@ -10,6 +10,12 @@ en:
     event_created: 'Event succesfully created!'
     glad_you: "Glad you liked it!"
   common:
+    email_not_found: "Email Not Found! Please Enter A Valid Email"
+    email_with_instructions: "Email Sent With Password Reset Instructions"
+    pass_reset: "Password Has Been Reset!"
+    pass_update_failed: "Password Failed To Update!"
+    pass_expired: "Password Reset Has Been Expired"
+    token_expired: "Password Reset Token Has Been Expired. Please Restart The Reset Process."
     thank_signup: "Thank, you're registered!"
     require_signin: "Please sign in first!"
     image_label: 'Image'
@@ -40,6 +46,9 @@ en:
     new:
       how_heard: 'How heard'
       pick: 'Pick one'
+  sessions:
+    new:
+      forgot_pass: 'Forgot Password?'
   events:
     index:
       spots_left: 
