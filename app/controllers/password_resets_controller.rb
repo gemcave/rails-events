@@ -24,17 +24,17 @@ end
 	def update
 		@user = User.find_by_reset_password_token!(params[:id])
 		if @user.reset_password_sent_at < 2.hour.ago
-			flash[:notice] = 'Password reset has expired'
+			flash[:notice] = t('common.pass_expired')
 			redirect_to new_password_reset_path
 		elsif @user.update(user_params)
-			flash[:notice] = 'Password has been reset!'
+			flash[:notice] = t('common.pass_reset')
 			redirect_to new_session_path
 		else
 			render :edit
 		end
 	end 
 	private
-	
+
   def user_params
     params.require(:user).permit(:password)
   end
