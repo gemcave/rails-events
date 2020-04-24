@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-	permit_params :name, :email, :password, :admin, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at
+	permit_params :name, :email, :password, :admin, :encrypted_password, :reset_password_token, :reset_password_sent_at
 
 	form do |f|
 		f.inputs "Admin Details" do
@@ -9,8 +9,6 @@ ActiveAdmin.register User do
 		f.input :encrypted_password
 		f.input :reset_password_token
 		f.input :reset_password_sent_at
-		f.input :remember_created_at
-
 		# f.input :password_confirmation
 		f.input :admin
 		end
