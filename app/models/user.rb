@@ -9,7 +9,7 @@ class User < ApplicationRecord
 										format: /\A\S+@\S+\z/,
 										uniqueness: { case_sensitive: false}
 	
-	before_create { generate_token(:auth_token) }
+	# before_create { generate_token(:auth_token) }
 
 	def self.authenticate(email, password)
 		user = User.find_by(email: email)
