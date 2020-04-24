@@ -49,6 +49,14 @@ en:
   sessions:
     new:
       forgot_pass: 'Forgot Password?'
+  password_resets:
+    edit:
+      new_pass: 'Enter New Password: '
+      confirm: 'Confirm New Password: '
+      update: 'Update Password'
+    new:
+      enter_email: 'Enter The Email Address Associated With Your Account: '
+      reset: 'Reset Password'
   events:
     index:
       spots_left: 

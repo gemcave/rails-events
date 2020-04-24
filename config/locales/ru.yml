@@ -80,6 +80,14 @@ ru:
       past: 'Прошлые'
       free: 'Бесплатные'
       recent: 'Недавние'
+  password_resets:
+    edit:
+      new_pass: 'Введите новый пароль: '
+      confirm: 'Для подтверждения повторите набранный пароль: '
+      update: 'Обновить пароль'
+    new:
+      enter_email: 'Введите связанный с аккаунтом email: '
+      reset: 'Сбросить пароль'
   events:
     index: 
       v: 'в'
