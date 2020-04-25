@@ -5,7 +5,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'blooming-garden-65144.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
-
+  
   # ActionMailer::Base.smtp_settings = {
   #   :address        => 'smtp.sendgrid.net',
   #   :port           => '587',
@@ -15,6 +15,7 @@ Rails.application.configure do
   #   :domain         => 'heroku.com',
   #   :enable_starttls_auto => true
   # }
+
 
   config.cache_classes = true
 
