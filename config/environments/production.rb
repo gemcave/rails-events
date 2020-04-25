@@ -3,7 +3,7 @@ Rails.application.configure do
 
 	config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'rocky-mountain-66065.herokuapp.com'
+  host = 'blooming-garden-65144.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   # ActionMailer::Base.smtp_settings = {
   #   :address        => 'smtp.sendgrid.net',
