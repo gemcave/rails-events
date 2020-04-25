@@ -10,7 +10,7 @@ Rails.application.configure do
     :port           => '465',
     :authentication => :plain,
     :user_name      => 'api_key',
-    :password       => ENV['SG_API_KEY'],
+    :password       => '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',
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
