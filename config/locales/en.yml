@@ -57,6 +57,10 @@ en:
     new:
       enter_email: 'Enter The Email Address Associated With Your Account: '
       reset: 'Reset Password'
+  user_mailer:
+    password_reset:
+      reset_header: 'To reset your password click the link below:'
+      reset_body: 'If you did not request to change your password just ignore this email and your password will stay the same.'
   events:
     index:
       spots_left: 
