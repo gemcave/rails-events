@@ -17,7 +17,7 @@
 						<%= format_price(event) %>
 					</span>
 					<p>
-						<%= truncate(event.description, length: 40, separator: ' ') %>
+						<%= truncate(event.description.to_plain_text, length: 40, separator: ' ') %>
 					</p>
         </div>
     </section>
