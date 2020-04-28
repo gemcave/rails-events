@@ -9,4 +9,6 @@
 			<%= password_field_tag :password, nil %>
 
 			<%= submit_tag t('common.sign_in_acc') %>
+
+			<%= link_to t('.forgot_pass'), new_password_reset_path, :id => "password_reset_link" %>
 <% end %>

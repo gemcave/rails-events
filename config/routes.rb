@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 		resource :session
 		get "signup" => "users#new"
 		resources :users
+		resources :password_resets
 		
 		root "events#index"
 		# get "events" => "events#index"
