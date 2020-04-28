@@ -23,6 +23,7 @@
     </section>
   <% end %>
 
+<%= will_paginate @events, class: 'apple_pagination' %>
 <% if current_user_admin? %>
   <section class="admin">
     <%= link_to t('common.add_new_event'), new_event_path, class: "button" %>

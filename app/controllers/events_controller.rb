@@ -6,13 +6,13 @@ class EventsController < ApplicationController
 	def index
 		case params[:scope]
 		when "past"
-			@events = Event.past
+			@events = Event.past.paginate(page: params[:page],  per_page: 3)
 		when "free"
-			@events = Event.free
+			@events = Event.free.paginate(page: params[:page],  per_page: 3)
 		when "recent"
-			@events = Event.recent
+			@events = Event.recent.paginate(page: params[:page],  per_page: 3)
 		else
-			@events = Event.upcoming
+			@events = Event.upcoming.paginate(page: params[:page],  per_page: 3)
 		end
 	end
 
