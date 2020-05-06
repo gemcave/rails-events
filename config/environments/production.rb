@@ -5,7 +5,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'blooming-garden-65144.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
-
+  # ActionMailer::Base.smtp_settings = {
+  #   :address        => 'smtp.sendgrid.net',
+  #   :port           => '465',
+  #   :authentication => :plain,
+  #   :user_name      => 'api_key',
+  #   :password       => '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',
+  #   :domain         => 'heroku.com',
+  #   :enable_starttls_auto => true
+  # }
   # ActionMailer::Base.smtp_settings = {
   #   :address        => 'smtp.sendgrid.net',
   #   :port           => '587',
