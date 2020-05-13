@@ -11,7 +11,7 @@ Rails.application.configure do
 		:password => Rails.application.credentials.SG_API_KEY,
 		:domain         => 'heroku.com',
 		:address => 'smtp.sendgrid.net',
-		:port => '587',
+		:port => '465',
 		:authentication => :plain,
 		:enable_starttls_auto => true
 	}
