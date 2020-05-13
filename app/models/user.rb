@@ -21,7 +21,6 @@ class User < ApplicationRecord
 		self.reset_password_sent_at = Time.zone.now 
 		save!
 		UserMailer.password_reset(self).deliver
-		puts '------------------------------->sended!!!'
 	end 
 
 	def generate_token(column)
