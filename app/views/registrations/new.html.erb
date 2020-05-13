@@ -4,10 +4,28 @@
 <%= form_with(model: [@event, @registration], local: true) do |f| %>
 <%= render 'shared/errors', object: @registration %>
 
+<div class="form-group">
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span><%= t('.amount')%>: <%= @event.price %> тг.</span>
+    </label>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= "Оплата - #{@event.name}"%>"
+          data-amount="<%= "#{@event.price * 100 }"%>"
+          data-locale="auto"
+					data-label="<%= "#{t('.pay')}"%>"
+					data-currency="KZT"></script>
+</div>
 	<%= f.label t('.how_heard') %>
 	<%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt:  t('.pick') %>
 
 	<%= f.submit t('.new') %>
 	<%= link_to t('common.cancel'), events_path, class: 'button' %>
+	
 
 <% end %>

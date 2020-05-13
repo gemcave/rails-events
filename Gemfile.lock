@@ -103,6 +103,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    braintree (2.101.0)
+      builder (>= 2.0.0)
     builder (3.2.4)
     byebug (11.0.1)
     capybara (3.30.0)
@@ -210,10 +212,18 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pay (2.1.2)
+      rails (>= 4.2)
+    pdf-core (0.7.0)
     pg (1.2.3)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     popper_js (1.16.0)
+    prawn (2.2.2)
+      pdf-core (~> 0.7.0)
+      ttfunk (~> 1.5)
+    prawn-table (0.2.2)
+      prawn (>= 1.3.0, < 3.0.0)
     public_suffix (4.0.3)
     puma (3.12.2)
     pusher-client (0.6.2)
@@ -263,6 +273,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    receipts (1.0.0)
+      prawn (>= 1.3.0, < 3.0.0)
+      prawn-table (~> 0.2.1)
+      ttfunk (~> 1.5.1)
     regexp_parser (1.6.0)
     responders (3.0.0)
       actionpack (>= 5.0)
@@ -332,6 +346,10 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    stripe (5.22.0)
+    stripe_event (2.3.1)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 6)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -344,6 +362,7 @@ GEM
       launchy (~> 2.1)
       pusher-client (~> 0.4)
       typhoeus (~> 0.6, >= 0.6.8)
+    ttfunk (1.5.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -384,6 +403,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.3.1)
+  braintree (>= 2.92.0, < 3.0)
   byebug
   capybara (>= 2.15)
   devise
@@ -392,10 +412,12 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (>= 3.0.5, < 3.2)
+  pay (~> 2.0)
   pg
   puma (~> 3.11)
   rails (~> 6.0.0)
   rails-i18n (~> 6.0.0)
+  receipts (~> 1.0.0)
   rspec-rails
   sass-rails (~> 5)
   selenium-webdriver
@@ -403,6 +425,8 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
+  stripe (>= 2.8, < 6.0)
+  stripe_event (~> 2.3)
   travis
   turbolinks (~> 5)
   tzinfo-data
