@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_095348) do
+ActiveRecord::Schema.define(version: 2020_05_13_125811) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -105,6 +105,35 @@ ActiveRecord::Schema.define(version: 2020_04_28_095348) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "pay_charges", force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.integer "amount", null: false
+    t.integer "amount_refunded"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pay_subscriptions", force: :cascade do |t|
+    t.integer "owner_id"
+    t.string "name", null: false
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.string "processor_plan", null: false
+    t.integer "quantity", default: 1, null: false
+    t.datetime "trial_ends_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "status"
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.string "how_heard"
     t.integer "event_id", null: false
@@ -125,6 +154,14 @@ ActiveRecord::Schema.define(version: 2020_04_28_095348) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "encrypted_password", default: "", null: false
+    t.string "processor"
+    t.string "processor_id"
+    t.datetime "trial_ends_at"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.text "extra_billing_info"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
