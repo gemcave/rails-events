@@ -585,3 +585,12 @@ h2:hover ~ span.price {
 	background-color: $yellow;
 	color: $off-white;
 }
+
+// stipe
+.stripe-button-el{
+	background-image: none !important;
+	span {
+		background-color: $accent-color !important;
+		background-image: none !important;
+	}
+}

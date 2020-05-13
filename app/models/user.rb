@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Pay::Billable
 	has_secure_password
 	has_many :registrations, dependent: :destroy
 	has_many :likes, dependent: :destroy
