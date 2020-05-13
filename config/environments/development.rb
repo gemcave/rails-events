@@ -1,23 +1,7 @@
 Rails.application.configure do
-	config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
-  host = 'localhost:3000'
+	host = 'localhost'
 	config.action_mailer.default_url_options = { host: host }
 	
-  	
-	ActionMailer::Base.smtp_settings = {
-		:user_name => 'apikey',
-		:password => Rails.application.credentials.SG_API_KEY,
-		:domain         => 'heroku.com',
-		:address => 'smtp.sendgrid.net',
-		:port => '587',
-		:authentication => :plain,
-		:enable_starttls_auto => true
-	}
-
-  config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
-  config.action_mailer.asset_host = 'http://localhost:3000'
-
   config.cache_classes = false
 
   config.eager_load = false
