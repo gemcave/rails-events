@@ -39,6 +39,15 @@ en:
         one: '1 user'
         few: '2 users'
         other: '%{count} users'
+  layouts:
+    header:
+      sign_up: 'Sign Up'
+      sign_in: 'Sign In'
+      sign_out: 'Logout'
+      upcoming: 'Upcoming'
+      past: 'Past'
+      free: 'Free'
+      recent: 'Recent'
   users:
     show:
       registered_for: 'Registered For'
@@ -47,6 +56,10 @@ en:
     new:
       how_heard: 'How heard'
       pick: 'Pick one'
+      register_for: 'Registration for'
+      new: 'Register'
+      amount: 'Amount'
+      pay: 'Pay'
   sessions:
     new:
       forgot_pass: 'Forgot Password?'
@@ -80,3 +93,12 @@ en:
     previous_label: "&#8592; Previous"
     next_label: "Next &#8594;"
     page_gap: "&hellip;"
+  activerecord:
+   attributes:
+     how_heard:
+      newsletter:  "Newsletter"
+      blog_post:  "Blog Post"
+      twitter:  "Twitter"
+      web_search:  "Web Search"
+      friend_coworker:  "Friend/Coworker"
+      other:  "Other"
