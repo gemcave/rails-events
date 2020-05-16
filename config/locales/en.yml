@@ -10,6 +10,7 @@ en:
     event_created: 'Event succesfully created!'
     glad_you: "Glad you liked it!"
   common:
+    add_new_event: "Add new event"
     email_not_found: "Email Not Found! Please Enter A Valid Email"
     email_with_instructions: "Email Sent With Password Reset Instructions"
     pass_reset: "Password Has Been Reset!"
